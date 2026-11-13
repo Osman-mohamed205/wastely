@@ -1,0 +1,270 @@
+@import "tailwindcss";
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Manrope", "Avenir Next", ui-sans-serif, sans-serif;
+  --color-navy-50: #f8fafc;
+  --color-navy-100: #f1f5f9;
+  --color-navy-200: #e2e8f0;
+  --color-navy-300: #cbd5e1;
+  --color-navy-400: #94a3b8;
+  --color-navy-500: #64748b;
+  --color-navy-600: #475569;
+  --color-navy-700: #334155;
+  --color-navy-800: #1e293b;
+  --color-navy-900: #0f172a;
+  --color-navy-950: #020617;
+
+  --color-green-50: #f0fdf4;
+  --color-green-100: #dcfce7;
+  --color-green-200: #bbf7d0;
+  --color-green-300: #86efac;
+  --color-green-400: #4ade80;
+  --color-green-500: #22c55e;
+  --color-green-600: #16a34a;
+  --color-green-700: #15803d;
+  --color-green-800: #166534;
+  --color-green-900: #14532d;
+  --color-green-950: #052e16;
+}
+
+/* Wastely's visual system: restrained surfaces, readable contrast, one accent. */
+:root {
+  --color-teal-50: #edf5f2;
+  --color-teal-100: #d9eae4;
+  --color-teal-200: #b8d6cb;
+  --color-teal-300: #8bbbab;
+  --color-teal-400: #4f9a85;
+  --color-teal-500: #287d69;
+  --color-teal-600: #216b5a;
+  --color-teal-700: #1d594c;
+  --color-teal-800: #19483f;
+  --color-teal-900: #153a34;
+  --color-teal-950: #0c2622;
+  --color-emerald-50: var(--color-teal-50);
+  --color-emerald-100: var(--color-teal-100);
+  --color-emerald-200: var(--color-teal-200);
+  --color-emerald-300: var(--color-teal-300);
+  --color-emerald-400: var(--color-teal-400);
+  --color-emerald-500: var(--color-teal-500);
+  --color-emerald-600: var(--color-teal-600);
+  --color-emerald-700: var(--color-teal-700);
+  --color-emerald-800: var(--color-teal-800);
+  --color-emerald-900: var(--color-teal-900);
+  --color-emerald-950: var(--color-teal-950);
+  --color-green-50: var(--color-teal-50);
+  --color-green-100: var(--color-teal-100);
+  --color-green-200: var(--color-teal-200);
+  --color-green-300: var(--color-teal-300);
+  --color-green-400: var(--color-teal-400);
+  --color-green-500: var(--color-teal-500);
+  --color-green-600: var(--color-teal-600);
+  --color-green-700: var(--color-teal-700);
+  --color-green-800: var(--color-teal-800);
+  --color-green-900: var(--color-teal-900);
+  --color-green-950: var(--color-teal-950);
+  --color-blue-50: var(--color-teal-50);
+  --color-blue-100: var(--color-teal-100);
+  --color-blue-200: var(--color-teal-200);
+  --color-blue-300: var(--color-teal-300);
+  --color-blue-400: var(--color-teal-400);
+  --color-blue-500: var(--color-teal-500);
+  --color-blue-600: var(--color-teal-600);
+  --color-blue-700: var(--color-teal-700);
+  --color-blue-800: var(--color-teal-800);
+  --color-blue-900: var(--color-teal-900);
+  --color-blue-950: var(--color-teal-950);
+  --color-indigo-50: var(--color-teal-50);
+  --color-indigo-100: var(--color-teal-100);
+  --color-indigo-200: var(--color-teal-200);
+  --color-indigo-300: var(--color-teal-300);
+  --color-indigo-400: var(--color-teal-400);
+  --color-indigo-500: var(--color-teal-500);
+  --color-indigo-600: var(--color-teal-600);
+  --color-indigo-700: var(--color-teal-700);
+  --color-indigo-800: var(--color-teal-800);
+  --color-indigo-900: var(--color-teal-900);
+  --color-indigo-950: var(--color-teal-950);
+  --color-sky-50: var(--color-teal-50);
+  --color-sky-100: var(--color-teal-100);
+  --color-sky-200: var(--color-teal-200);
+  --color-sky-300: var(--color-teal-300);
+  --color-sky-400: var(--color-teal-400);
+  --color-sky-500: var(--color-teal-500);
+  --color-sky-600: var(--color-teal-600);
+  --color-sky-700: var(--color-teal-700);
+  --color-sky-800: var(--color-teal-800);
+  --color-sky-900: var(--color-teal-900);
+  --color-sky-950: var(--color-teal-950);
+  --color-cyan-50: var(--color-teal-50);
+  --color-cyan-100: var(--color-teal-100);
+  --color-cyan-200: var(--color-teal-200);
+  --color-cyan-300: var(--color-teal-300);
+  --color-cyan-400: var(--color-teal-400);
+  --color-cyan-500: var(--color-teal-500);
+  --color-cyan-600: var(--color-teal-600);
+  --color-cyan-700: var(--color-teal-700);
+  --color-cyan-800: var(--color-teal-800);
+  --color-cyan-900: var(--color-teal-900);
+  --color-cyan-950: var(--color-teal-950);
+  --color-violet-50: var(--color-teal-50);
+  --color-violet-100: var(--color-teal-100);
+  --color-violet-200: var(--color-teal-200);
+  --color-violet-300: var(--color-teal-300);
+  --color-violet-400: var(--color-teal-400);
+  --color-violet-500: var(--color-teal-500);
+  --color-violet-600: var(--color-teal-600);
+  --color-violet-700: var(--color-teal-700);
+  --color-violet-800: var(--color-teal-800);
+  --color-violet-900: var(--color-teal-900);
+  --color-violet-950: var(--color-teal-950);
+  --color-purple-50: var(--color-teal-50);
+  --color-purple-100: var(--color-teal-100);
+  --color-purple-200: var(--color-teal-200);
+  --color-purple-300: var(--color-teal-300);
+  --color-purple-400: var(--color-teal-400);
+  --color-purple-500: var(--color-teal-500);
+  --color-purple-600: var(--color-teal-600);
+  --color-purple-700: var(--color-teal-700);
+  --color-purple-800: var(--color-teal-800);
+  --color-purple-900: var(--color-teal-900);
+  --color-purple-950: var(--color-teal-950);
+  --color-amber-50: var(--color-teal-50);
+  --color-amber-100: var(--color-teal-100);
+  --color-amber-200: var(--color-teal-200);
+  --color-amber-300: var(--color-teal-300);
+  --color-amber-400: var(--color-teal-400);
+  --color-amber-500: var(--color-teal-500);
+  --color-amber-600: var(--color-teal-600);
+  --color-amber-700: var(--color-teal-700);
+  --color-amber-800: var(--color-teal-800);
+  --color-amber-900: var(--color-teal-900);
+  --color-amber-950: var(--color-teal-950);
+  --color-orange-50: var(--color-teal-50);
+  --color-orange-100: var(--color-teal-100);
+  --color-orange-200: var(--color-teal-200);
+  --color-orange-300: var(--color-teal-300);
+  --color-orange-400: var(--color-teal-400);
+  --color-orange-500: var(--color-teal-500);
+  --color-orange-600: var(--color-teal-600);
+  --color-orange-700: var(--color-teal-700);
+  --color-orange-800: var(--color-teal-800);
+  --color-orange-900: var(--color-teal-900);
+  --color-orange-950: var(--color-teal-950);
+  --color-yellow-50: var(--color-teal-50);
+  --color-yellow-100: var(--color-teal-100);
+  --color-yellow-200: var(--color-teal-200);
+  --color-yellow-300: var(--color-teal-300);
+  --color-yellow-400: var(--color-teal-400);
+  --color-yellow-500: var(--color-teal-500);
+  --color-yellow-600: var(--color-teal-600);
+  --color-yellow-700: var(--color-teal-700);
+  --color-yellow-800: var(--color-teal-800);
+  --color-yellow-900: var(--color-teal-900);
+  --color-yellow-950: var(--color-teal-950);
+}
+
+:root.theme-blue {
+  --color-teal-50: #edf4f8;
+  --color-teal-100: #d9e7ef;
+  --color-teal-200: #b6d1e0;
+  --color-teal-300: #8db4ca;
+  --color-teal-400: #6597b2;
+  --color-teal-500: #477c99;
+  --color-teal-600: #376a86;
+  --color-teal-700: #2d576e;
+  --color-teal-800: #264858;
+  --color-teal-900: #203b49;
+  --color-teal-950: #132630;
+}
+
+:root.theme-burgundy {
+  --color-teal-50: #f7eff1;
+  --color-teal-100: #f0dfe3;
+  --color-teal-200: #e1c1ca;
+  --color-teal-300: #cb9ba9;
+  --color-teal-400: #ae7183;
+  --color-teal-500: #92576a;
+  --color-teal-600: #7c4558;
+  --color-teal-700: #673847;
+  --color-teal-800: #542f3c;
+  --color-teal-900: #452832;
+  --color-teal-950: #2a171e;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900 font-sans;
+  text-wrap: pretty;
+}
+
+h1, h2, h3, h4, h5, h6 { text-wrap: balance; }
+html, body, #root { min-height: 100%; }
+button, input, select, textarea { font: inherit; }
+button { -webkit-tap-highlight-color: transparent; }
+:focus-visible { outline: 2px solid var(--color-teal-600); outline-offset: 2px; }
+.rounded-3xl { border-radius: 1rem; }
+.rounded-2xl { border-radius: 0.875rem; }
+.shadow-xl, .shadow-2xl { --tw-shadow: 0 8px 24px -16px rgb(15 23 42 / 0.28); box-shadow: var(--tw-shadow); }
+
+.skip-link {
+  position: fixed;
+  z-index: 100;
+  top: 0.75rem;
+  left: 0.75rem;
+  transform: translateY(-160%);
+  border-radius: 0.5rem;
+  background: #153a34;
+  padding: 0.75rem 1rem;
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.skip-link:focus { transform: translateY(0); }
+
+@layer utilities {
+  .heading-5 { font-size: 1.5rem; line-height: 2rem; font-weight: 600; text-wrap: balance; }
+  .heading-6 { font-size: 1.25rem; line-height: 1.75rem; font-weight: 600; text-wrap: balance; }
+  .title-3 { font-size: 1rem; line-height: 1.5rem; font-weight: 500; }
+  .title-4 { font-size: 0.875rem; line-height: 1.25rem; font-weight: 500; }
+  .body-3 { font-size: 1rem; line-height: 1.5rem; font-weight: 400; }
+  .body-6 { font-size: 0.875rem; line-height: 1.25rem; font-weight: 400; }
+  .button-md { font-size: 1rem; line-height: 1.5rem; font-weight: 600; }
+  .button-sm { font-size: 0.875rem; line-height: 1.25rem; font-weight: 600; }
+  .caption-3 { font-size: 0.75rem; line-height: 1rem; font-weight: 600; }
+  .caption-4 { font-size: 0.75rem; line-height: 1rem; font-weight: 500; }
+}
+
+.dark { color-scheme: dark; }
+.dark .bg-white,
+.dark .bg-slate-800 { background-color: #181818; }
+.dark .bg-slate-50,
+.dark .bg-slate-900 { background-color: #000000; }
+.dark .bg-slate-100 { background-color: #1f1f1f; }
+.dark .bg-slate-700 { background-color: #272727; }
+.dark .bg-slate-600 { background-color: #313131; }
+.dark .text-slate-900, .dark .text-slate-800 { color: #f1f5f9; }
+.dark .text-slate-700, .dark .text-slate-600 { color: #cbd5e1; }
+.dark .border-slate-100, .dark .border-slate-200 { border-color: #334155; }
+
+@layer utilities {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #cbd5e1;
+    border-radius: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

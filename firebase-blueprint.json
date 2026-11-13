@@ -1,0 +1,64 @@
+{
+  "entities": {
+    "User": {
+      "title": "User Profile",
+      "description": "User-specific metadata and settings.",
+      "type": "object",
+      "properties": {
+        "email": { "type": "string", "format": "email" },
+        "energyTariff": { "type": "number", "description": "RM per kWh" },
+        "laborRate": { "type": "number", "description": "RM per hour" }
+      },
+      "required": ["email"]
+    },
+    "Department": {
+      "title": "Department",
+      "description": "Business department definition.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "name": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "name"]
+    },
+    "OperationalRecord": {
+      "title": "Operational Record",
+      "description": "Daily operational data entry.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "date": { "type": "string", "format": "date-time" },
+        "department": { "type": "string", "enum": ["Operations", "Sales/Service", "Admin"] },
+        "outputUnits": { "type": "number" },
+        "laborHours": { "type": "number" },
+        "energyConsumption": { "type": "number" },
+        "waitingTime": { "type": "number" },
+        "downtime": { "type": "number" },
+        "materialCost": { "type": "number" },
+        "miscCost": { "type": "number" },
+        "unplannedCost": { "type": "number" },
+        "timeWaste": { "type": "number" },
+        "energyCost": { "type": "number" },
+        "laborCost": { "type": "number" },
+        "totalOperatingCost": { "type": "number" },
+        "wasteIndex": { "type": "number" }
+      },
+      "required": ["userId", "date", "department"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User profile and settings."
+    },
+    "/records/{recordId}": {
+      "schema": "OperationalRecord",
+      "description": "Operational data records."
+    },
+    "/departments/{departmentId}": {
+      "schema": "Department",
+      "description": "User-defined departments."
+    }
+  }
+}

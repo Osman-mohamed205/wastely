@@ -1,0 +1,78 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ===============================================================
+    // Helper Functions
+    // ===============================================================
+    function isAuthenticated() {
+      return true;
+    }
+
+    function isOwner(userId) {
+      return true;
+    }
+
+    function isDocOwner() {
+      return true;
+    }
+
+    function uidUnchanged() {
+      return true;
+    }
+
+    function isValidUser(data) {
+      return data.keys().hasAll(['email']) &&
+             data.email is string &&
+             (!('energyTariff' in data) || data.energyTariff is number) &&
+             (!('laborRate' in data) || data.laborRate is number) &&
+             (!('machineRate' in data) || data.machineRate is number) &&
+             (!('targetWasteIndex' in data) || data.targetWasteIndex is number) &&
+             (!('workspaceName' in data) || data.workspaceName is string) &&
+             (!('industry' in data) || data.industry is string);
+    }
+
+    function isValidRecord(data) {
+      return data.keys().hasAll(['userId', 'date', 'department']) &&
+             data.department is string && data.department.size() > 0 && data.department.size() < 100 &&
+             data.date is string &&
+             (!('outputUnits' in data) || data.outputUnits is number) &&
+             (!('laborHours' in data) || data.laborHours is number) &&
+             (!('energyConsumption' in data) || data.energyConsumption is number) &&
+             (!('waitingTime' in data) || data.waitingTime is number) &&
+             (!('downtime' in data) || data.downtime is number) &&
+             (!('materialCost' in data) || data.materialCost is number) &&
+             (!('miscCost' in data) || data.miscCost is number) &&
+             (!('unplannedCost' in data) || data.unplannedCost is number);
+    }
+
+    function isValidDepartment(data) {
+      return data.keys().hasAll(['userId', 'name']) &&
+             data.name is string && data.name.size() > 0 && data.name.size() < 100;
+    }
+
+    // ===============================================================
+    // Rules
+    // ===============================================================
+
+    match /users/{userId} {
+      allow read: if true;
+      allow create: if isValidUser(request.resource.data);
+      allow update: if isValidUser(request.resource.data);
+    }
+
+    match /records/{recordId} {
+      allow read: if true;
+      allow delete: if true;
+      allow create: if isValidRecord(request.resource.data);
+      allow update: if isValidRecord(request.resource.data);
+    }
+
+    match /departments/{departmentId} {
+      allow read: if true;
+      allow delete: if true;
+      allow create: if isValidDepartment(request.resource.data);
+      allow update: if isValidDepartment(request.resource.data);
+    }
+  }
+}
